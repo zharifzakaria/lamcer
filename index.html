@@ -94,17 +94,31 @@
 
     <div class="col-md-6 greenbox1">
       <h2>Academic</h2>
+      <br>
       <img style="padding:10px 0;"src="img/icon-monitor.png" alt="academic">
       <p><br>We tirelessly seek to inspire and nurture in each student intellectual growth and moral development in order to succeed in a diverse and ever changing world.</p>
       <a href="program.html" class="btn btn-warning btn-sm" role="button">Learn More</a>
     </div>
     <div class="col-md-6 greenbox2">
       <h2>Testimonial</h2>
-      <div class="embed-container img-responsive" style="width:100%;">
-       <iframe width="240px" src="https://www.youtube.com/embed/s3AFjk9Q10M" frameborder="0" allowfullscreen></iframe>
+
+
+        <img src="img/yt_parent.png" style="text-decoration: none;" href="#" class="btn img-responsive" data-toggle="modal" data-target="#videoModal" data-theVideo="https://www.youtube.com/embed/s3AFjk9Q10M">
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div>
+                    <iframe width="100%" height="350" src=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         <p><br>View testimonial video by parents at Laman Cerdik.</p>
       </div>
-    </div>
 
       <div class="col-md-12" style="background-color:white; padding-bottom:2em;">
     <div class="row" style="padding:2em auto;">
@@ -112,8 +126,8 @@
         <h3>News</h3>
        <p>Other Important News</p>
       </div>
-      <div class="col-sm-4 col-md-6" style="background-color:white;">
-       
+
+      <div class="col-sm-4 col-md-6" style="background-color:white;"> 
        <h3>Notice Board</h3>
           <img class="img-responsive" src="http://lamancerdik.my/img/post_puasa.jpg" alt="Logo Taska Tadika Laman Cerdik Putrajaya" style="max-height:400px;">
       </div>
@@ -176,7 +190,25 @@
 
     </div> <!-- /container -->
 </body>
-
+        <script>
+        autoPlayYouTubeModal();
+  //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+  function autoPlayYouTubeModal() {
+      var trigger = $("body").find('[data-toggle="modal"]');
+      trigger.click(function () {
+          var theModal = $(this).data("target"),
+              videoSRC = $(this).attr("data-theVideo"),
+              videoSRCauto = videoSRC + "?autoplay=1";
+          $(theModal + ' iframe').attr('src', videoSRCauto);
+          $(theModal + ' button.close').click(function () {
+              $(theModal + ' iframe').attr('src', videoSRC);
+          });
+          $('.modal').click(function () {
+              $(theModal + ' iframe').attr('src', videoSRC);
+          });
+      });
+  }
+        </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

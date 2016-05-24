@@ -81,6 +81,15 @@ $dropDown       : false;
     font: 22px Arial, sans-serif;
 }
 
+/***** MODAL PROPERTIES *****/
+ .modal-content {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background:transparent;
+    border:none;
+    outline:none;
+}
+
 .hue1{-webkit-filter: hue-rotate(36deg);
 filter: hue-rotate(36deg);}
 .hue2{-webkit-filter: hue-rotate(72deg);
